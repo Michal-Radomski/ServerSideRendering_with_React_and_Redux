@@ -1,9 +1,11 @@
 {
   "name": "react-ssr",
   "version": "1.0.0",
-  "description": "Server side rendering project",
+  "description": "Server Side Rendering Project",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev:build:server": "webpack --config webpack.server.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
