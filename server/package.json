@@ -4,7 +4,8 @@
   "description": "Server Side Rendering Project",
   "main": "index.js",
   "scripts": {
-    "dev:build:server": "webpack --config webpack.server.js"
+    "dev:sever": "nodemon --watch build --exec \"node build/bundle.js\"",
+    "dev:build:server": "webpack --config webpack.server.js --watch"
   },
   "author": "",
   "license": "ISC",
@@ -38,5 +39,8 @@
     "webpack-dev-server": "2.8.2",
     "webpack-merge": "4.1.0",
     "webpack-node-externals": "1.6.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.16.7"
   }
 }
