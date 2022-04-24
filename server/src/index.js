@@ -5,7 +5,9 @@
 // console.log("Home:", Home);
 
 import express from "express";
+
 import renderer from "./helpers/renderer";
+import createStore from "./helpers/createStore";
 
 const app = express();
 
@@ -15,9 +17,11 @@ const Port = 3000;
 
 app.get("*", (req, res) => {
   // const content = renderToString("Test Message");
+  const store = createStore();
   console.log("req.ip:", req.ip);
 
-  res.send(renderer(req));
+  //* Logic to initialize and load data into the store
+  res.send(renderer(req, store));
 });
 
 app.listen(Port, () => {
