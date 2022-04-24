@@ -1,7 +1,6 @@
 // const express = require("express");
 // const React = require("react");
 // const renderToString = require("react-dom/server").renderToString;
-
 // const Home = require("./client/components/Home.jsx").default;
 // console.log("Home:", Home);
 
@@ -12,6 +11,8 @@ import Home from "./client/components/Home";
 
 const app = express();
 
+app.use(express.static("public"));
+
 const Port = 3000;
 
 app.get("/", (req, res) => {
@@ -19,7 +20,20 @@ app.get("/", (req, res) => {
   console.log("req.ip:", req.ip);
   const content = renderToString(<Home />);
   // console.log("content:", content);
-  res.send(content);
+
+  const html = `
+<html>
+<head></head>
+
+<body>
+<div id="root">${content}</div>
+<script src="bundle.js"></script>
+</body>
+</html>
+`;
+
+  // res.send(content);
+  res.send(html);
 });
 
 app.listen(Port, () => {
