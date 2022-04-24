@@ -6,6 +6,7 @@ export default () => {
   return (
     <div>
       <Route path="/" exact={true} component={Home} />
+      {/* <Route path="/hi" component={()=> "Hi"} /> */}
     </div>
   );
 };

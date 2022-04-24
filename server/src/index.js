@@ -13,11 +13,11 @@ app.use(express.static("public"));
 
 const Port = 3000;
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   // const content = renderToString("Test Message");
   console.log("req.ip:", req.ip);
 
-  res.send(renderer());
+  res.send(renderer(req));
 });
 
 app.listen(Port, () => {
