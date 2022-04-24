@@ -5,9 +5,7 @@
 // console.log("Home:", Home);
 
 import express from "express";
-import React from "react";
-import {renderToString} from "react-dom/server";
-import Home from "./client/components/Home";
+import renderer from "./helpers/renderer";
 
 const app = express();
 
@@ -18,22 +16,8 @@ const Port = 3000;
 app.get("/", (req, res) => {
   // const content = renderToString("Test Message");
   console.log("req.ip:", req.ip);
-  const content = renderToString(<Home />);
-  // console.log("content:", content);
 
-  const html = `
-<html>
-<head></head>
-
-<body>
-<div id="root">${content}</div>
-<script src="bundle.js"></script>
-</body>
-</html>
-`;
-
-  // res.send(content);
-  res.send(html);
+  res.send(renderer());
 });
 
 app.listen(Port, () => {
