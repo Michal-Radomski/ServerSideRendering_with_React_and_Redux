@@ -4,6 +4,7 @@
 // const Home = require("./client/components/Home.jsx").default;
 // console.log("Home:", Home);
 
+import "babel-polyfill";
 import express from "express";
 
 import renderer from "./helpers/renderer";
