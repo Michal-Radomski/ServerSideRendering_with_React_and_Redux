@@ -24,9 +24,17 @@ app.get("*", (req, res) => {
   console.log("req.ip:", req.ip);
 
   //* Logic to initialize and load data into the store
-  matchRoutes(Routes, req.path);
+  console.log("matchRoutes(Routes, req.path):", matchRoutes(Routes, req.path));
 
-  res.send(renderer(req, store));
+  //* Destructuring below:
+  const promises = matchRoutes(Routes, req.path).map(({route}) => {
+    return route.loadData ? route.loadData(store) : null;
+  });
+  // console.log("promises:", promises);
+
+  Promise.all(promises).then(() => {
+    res.send(renderer(req, store));
+  });
 });
 
 app.listen(Port, () => {

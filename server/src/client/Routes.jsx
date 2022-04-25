@@ -2,7 +2,7 @@
 // import {Route} from "react-router-dom";
 
 import Home from "./components/Home";
-import UsersList from "./components/UsersList";
+import UsersList, {loadData} from "./components/UsersList";
 
 //* Traditional - not working on SSR
 // export default () => {
@@ -23,6 +23,7 @@ export default [
     exact: true,
   },
   {
+    loadData: loadData,
     path: "/users",
     component: UsersList,
   },
