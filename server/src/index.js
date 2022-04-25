@@ -6,9 +6,11 @@
 
 import "babel-polyfill";
 import express from "express";
+import {matchRoutes} from "react-router-config";
 
 import renderer from "./helpers/renderer";
 import createStore from "./helpers/createStore";
+import Routes from "./helpers/routes";
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.get("*", (req, res) => {
   console.log("req.ip:", req.ip);
 
   //* Logic to initialize and load data into the store
+  matchRoutes(Routes, req.path);
+
   res.send(renderer(req, store));
 });
 
