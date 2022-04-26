@@ -1,8 +1,9 @@
 // import React from "react";
 // import {Route} from "react-router-dom";
 
-import Home from "./components/Home";
-import UsersList, {loadData} from "./components/UsersList";
+import HomePage from "./pages/Home";
+// import UsersListPage, {loadData} from "./pages/UsersList";
+import UsersListPage from "./pages/UsersList";
 
 //* Traditional - not working on SSR
 // export default () => {
@@ -19,12 +20,15 @@ import UsersList, {loadData} from "./components/UsersList";
 export default [
   {
     path: "/",
-    component: Home,
+    // component: HomePage,
+    ...HomePage,
     exact: true,
   },
   {
-    loadData: loadData,
+    // loadData: loadData,
+    // path: "/users",
+    // component: UsersListPage,
+    ...UsersListPage,
     path: "/users",
-    component: UsersList,
   },
 ];

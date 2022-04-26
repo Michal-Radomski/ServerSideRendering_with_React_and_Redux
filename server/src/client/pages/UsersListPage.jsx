@@ -32,6 +32,9 @@ function loadData(store) {
   // console.log("I'm trying to load some data");
   return store.dispatch(fetchUsers());
 }
-export {loadData};
+// export {loadData};
 
-export default connect(mapStateToProps, {fetchUsers})(UsersList);
+export default {
+  loadData: loadData,
+  component: connect(mapStateToProps, {fetchUsers})(UsersList),
+};
