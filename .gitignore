@@ -40,3 +40,5 @@ typings/
 
 # My Entries
 00 Diagrams/
+build/
+public/
