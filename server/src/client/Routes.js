@@ -4,6 +4,7 @@
 import HomePage from "./pages/Home";
 // import UsersListPage, {loadData} from "./pages/UsersList";
 import UsersListPage from "./pages/UsersList";
+import App from "./App";
 
 //* Traditional - not working on SSR
 // export default () => {
@@ -19,16 +20,21 @@ import UsersListPage from "./pages/UsersList";
 //* SSR Routing with React Router Config Library
 export default [
   {
-    path: "/",
-    // component: HomePage,
-    ...HomePage,
-    exact: true,
-  },
-  {
-    // loadData: loadData,
-    // path: "/users",
-    // component: UsersListPage,
-    ...UsersListPage,
-    path: "/users",
+    ...App, //* Always is displayed
+    routes: [
+      {
+        path: "/",
+        // component: HomePage,
+        ...HomePage,
+        exact: true,
+      },
+      {
+        // loadData: loadData,
+        // path: "/users",
+        // component: UsersListPage,
+        ...UsersListPage,
+        path: "/users",
+      },
+    ],
   },
 ];
