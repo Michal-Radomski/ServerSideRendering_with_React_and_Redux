@@ -11,7 +11,7 @@ import {renderRoutes} from "react-router-config";
 import Routes from "./Routes";
 import reducers from "./reducers/index";
 
-const store = createStore(reducers, (initialState = {}), applyMiddleware(thunk));
+const store = createStore(reducers, (initialState = window.INITIAL_STATE), applyMiddleware(thunk));
 
 // ReactDOM.render(<Home />, document.getElementById("root"));
 ReactDOM.hydrate(
