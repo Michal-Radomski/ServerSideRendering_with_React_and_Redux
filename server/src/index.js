@@ -19,7 +19,7 @@ app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com/users", {
     proxyReqOptDecorator(opts) {
-      opts.header["x-forwarded-host"] = "localhost: 3000";
+      opts.headers["x-forwarded-host"] = "localhost:3000";
       return opts;
     },
   })
@@ -31,8 +31,8 @@ const Port = 3000;
 
 app.get("*", (req, res) => {
   // const content = renderToString("Test Message");
-  const store = createStore();
-  console.log("req.ip:", req.ip);
+  const store = createStore(req);
+  // console.log("req.ip:", req.ip);
 
   //* Logic to initialize and load data into the store
   console.log("matchRoutes(Routes, req.path):", matchRoutes(Routes, req.path));
