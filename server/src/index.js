@@ -44,7 +44,14 @@ app.get("*", (req, res) => {
   // console.log("promises:", promises);
 
   Promise.all(promises).then(() => {
-    res.send(renderer(req, store));
+    const context = {};
+    const content = renderer(req, store, context);
+
+    if (context.notFound) {
+      res.status(404);
+    }
+
+    res.send(content);
   });
 });
 
