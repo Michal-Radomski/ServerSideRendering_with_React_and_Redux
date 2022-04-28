@@ -38,9 +38,17 @@ app.get("*", (req, res) => {
   console.log("matchRoutes(Routes, req.path):", matchRoutes(Routes, req.path));
 
   //* Destructuring below:
-  const promises = matchRoutes(Routes, req.path).map(({route}) => {
-    return route.loadData ? route.loadData(store) : null;
-  });
+  const promises = matchRoutes(Routes, req.path)
+    .map(({route}) => {
+      return route.loadData ? route.loadData(store) : null;
+    })
+    .map((promise) => {
+      if (promise) {
+        return new Promise((resolve, _reject) => {
+          promise.then(resolve).catch(resolve);
+        });
+      }
+    });
   // console.log("promises:", promises);
 
   Promise.all(promises).then(() => {
