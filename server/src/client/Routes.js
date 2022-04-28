@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 // import UsersListPage, {loadData} from "./pages/UsersList";
 import UsersListPage from "./pages/UsersListPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import AdminsListPage from "./pages/AdminsListPage";
 
 //* Traditional - not working on SSR
 // export default () => {
@@ -28,6 +29,10 @@ export default [
         // component: HomePage,
         ...HomePage,
         exact: true,
+      },
+      {
+        path: "/admins",
+        ...AdminsListPage,
       },
       {
         // loadData: loadData,
