@@ -15,6 +15,8 @@ import Routes from "./helpers/routes";
 
 const app = express();
 
+const Port = 3000;
+
 app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com/users", {
@@ -26,8 +28,6 @@ app.use(
 );
 
 app.use(express.static("public"));
-
-const Port = 3000;
 
 app.get("*", (req, res) => {
   // const content = renderToString("Test Message");
