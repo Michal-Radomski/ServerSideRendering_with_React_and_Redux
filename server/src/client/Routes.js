@@ -1,10 +1,11 @@
 // import React from "react";
 // import {Route} from "react-router-dom";
 
-import HomePage from "./pages/Home";
-// import UsersListPage, {loadData} from "./pages/UsersList";
-import UsersListPage from "./pages/UsersList";
 import App from "./App";
+import HomePage from "./pages/HomePage";
+// import UsersListPage, {loadData} from "./pages/UsersList";
+import UsersListPage from "./pages/UsersListPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 //* Traditional - not working on SSR
 // export default () => {
@@ -34,6 +35,9 @@ export default [
         // component: UsersListPage,
         ...UsersListPage,
         path: "/users",
+      },
+      {
+        ...NotFoundPage,
       },
     ],
   },
