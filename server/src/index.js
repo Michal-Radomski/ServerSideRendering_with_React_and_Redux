@@ -11,7 +11,7 @@ import proxy from "express-http-proxy";
 
 import renderer from "./helpers/renderer";
 import createStore from "./helpers/createStore";
-import Routes from "./helpers/routes";
+import Routes from "./client/Routes";
 
 const app = express();
 
