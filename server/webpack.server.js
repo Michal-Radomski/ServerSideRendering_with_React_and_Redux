@@ -4,7 +4,7 @@ const baseConfig = require("./webpack.base.js");
 const webpackNodeExternals = require("webpack-node-externals");
 
 const config = {
-  // Fort nodeJs
+  // For nodeJs
   target: "node",
   // Root file
   entry: "./src/index.js",
