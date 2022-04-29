@@ -9,7 +9,7 @@ import express from "express";
 import {matchRoutes} from "react-router-config";
 import proxy from "express-http-proxy";
 
-import renderer from "./helpers/renderer";
+import renderer from "./helpers/renderer.jsx";
 import createStore from "./helpers/createStore";
 import Routes from "./client/Routes";
 

@@ -4,7 +4,7 @@ const baseConfig = require("./webpack.base.js");
 
 const config = {
   // Root file
-  entry: "./src/client/client.js",
+  entry: "./src/client/client.jsx",
   // Output file
   output: {
     filename: "bundle.js",
