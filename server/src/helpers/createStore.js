@@ -13,6 +13,8 @@ export default (req) => {
     },
   });
 
-  const store = createStore(reducers, (initialState = {}), applyMiddleware(thunk.withExtraArgument(axiosInstance)));
+  const initialState = {};
+
+  const store = createStore(reducers, initialState, applyMiddleware(thunk.withExtraArgument(axiosInstance)));
   return store;
 };
