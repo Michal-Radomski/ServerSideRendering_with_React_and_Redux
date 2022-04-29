@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 
 import {fetchAdmins} from "../actions/index";
-import requireAuth from "../components/HOCs/requireAuth";
+import requireAuth from "../components/HOCs/requireAuth.jsx";
 
 class AdminsListPage extends React.Component {
   componentDidMount() {

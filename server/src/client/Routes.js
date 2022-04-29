@@ -1,12 +1,12 @@
 // import React from "react";
 // import {Route} from "react-router-dom";
 
-import App from "./App";
-import HomePage from "./pages/HomePage";
+import App from "./App.jsx";
+import HomePage from "./pages/HomePage.jsx";
 // import UsersListPage, {loadData} from "./pages/UsersList";
-import UsersListPage from "./pages/UsersListPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import AdminsListPage from "./pages/AdminsListPage";
+import UsersListPage from "./pages/UsersListPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
+import AdminsListPage from "./pages/AdminsListPage.jsx";
 
 //* Traditional - not working on SSR
 // export default () => {

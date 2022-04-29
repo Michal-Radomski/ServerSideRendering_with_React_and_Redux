@@ -1,7 +1,7 @@
 import React from "react";
 import {renderRoutes} from "react-router-config";
 
-import Header from "./components/Header";
+import Header from "./components/Header.jsx";
 import {fetchCurrentUser} from "./actions/index";
 
 const App = ({route}) => {
