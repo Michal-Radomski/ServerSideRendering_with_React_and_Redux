@@ -6,3 +6,7 @@ Files created during the Udemy.com course:
 Build with Node Version: 8.17.0
 
 API -> WWW: <https://react-ssr-api.herokuapp.com>
+
+AdditionalTasks
+
+1. Files created during [this](https://nils-mehlhorn.de/posts/typescript-nodejs-react-ssr) tutorial.
