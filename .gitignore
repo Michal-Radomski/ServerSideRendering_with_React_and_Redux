@@ -43,3 +43,5 @@ typings/
 build/
 public/
 api/
+dist/
+
