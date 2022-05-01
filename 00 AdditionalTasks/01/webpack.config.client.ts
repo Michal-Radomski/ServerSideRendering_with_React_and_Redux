@@ -1,4 +1,4 @@
-const path = require("path");
+import * as path from "path";
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const {WebpackManifestPlugin} = require("webpack-manifest-plugin");
 
