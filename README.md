@@ -10,3 +10,5 @@ API -> WWW: <https://react-ssr-api.herokuapp.com>
 AdditionalTasks
 
 1. Files created during [this](https://nils-mehlhorn.de/posts/typescript-nodejs-react-ssr) tutorial.
+
+2. Files created during [this](https://devtails.xyz/how-to-set-up-server-side-rendering-ssr-with-react-and-esbuild) tutorial.
