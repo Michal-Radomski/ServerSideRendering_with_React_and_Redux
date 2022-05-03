@@ -4,7 +4,9 @@ const App: React.FC = () => {
   const [clientMessage, setClientMessage] = React.useState<string>("");
 
   React.useEffect(() => {
-    setClientMessage("Hello From React");
+    setTimeout(() => {
+      setClientMessage("Hello From React");
+    }, 1000);
   });
 
   return (
