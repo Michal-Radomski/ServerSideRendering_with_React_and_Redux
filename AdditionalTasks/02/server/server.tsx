@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
   const reactApp: string = ReactDOMServer.renderToString(<App />);
   // const reactApp: string = ReactDOMServer.renderToString(React.createElement(App)); //* Another way
   const html: string = `
+  <!DOCTYPE html>
         <html lang="en">
         <head>
             <script src="app.js" async defer></script>
