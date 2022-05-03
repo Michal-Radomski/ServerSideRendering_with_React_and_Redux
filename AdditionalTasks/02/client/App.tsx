@@ -10,7 +10,7 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
       <h1 style={{backgroundColor: "cyan"}}>Hello World!</h1>
-      <h2>{clientMessage}</h2>
+      <h2 style={{color: "darkmagenta"}}>{clientMessage}</h2>
     </React.Fragment>
   );
 };
