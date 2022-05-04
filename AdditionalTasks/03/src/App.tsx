@@ -1,8 +1,14 @@
 import React from "react";
 import "./App.scss";
 
-function App() {
-  return <React.Fragment>App</React.Fragment>;
+import Home from "./Home";
+
+function App(): JSX.Element {
+  return (
+    <React.Fragment>
+      <Home name="Mich" />
+    </React.Fragment>
+  );
 }
 
 export default App;
