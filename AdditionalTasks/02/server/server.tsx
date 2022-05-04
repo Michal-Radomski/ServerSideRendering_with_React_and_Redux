@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
         <html lang="en">
         <head>
             <script src="app.js" async defer></script>
+            <link rel="stylesheet" href="app.css">
         </head>
         <body style="background-color: lightYellow">
         <h1>h1 - test from server.tsx</h1>

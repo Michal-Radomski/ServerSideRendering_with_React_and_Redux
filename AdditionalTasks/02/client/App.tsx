@@ -11,8 +11,12 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-      <h1 style={{backgroundColor: "cyan"}}>Hello World!</h1>
-      <h2 style={{color: "darkmagenta"}}>{clientMessage}</h2>
+      <h1 style={{backgroundColor: "cyan"}} className="testingSassPlugin">
+        Hello World!
+      </h1>
+      <h2 style={{color: "darkmagenta"}} className="testingSassPlugin">
+        {clientMessage}
+      </h2>
     </React.Fragment>
   );
 };
