@@ -45,4 +45,5 @@ public/
 api/
 dist/
 built/
+/server-build
 
