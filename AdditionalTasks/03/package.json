@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/sass-loader": "^8.0.3",
     "babel-loader": "^8.2.5",
     "express": "^4.18.1",
     "react": "^17.0.2",
@@ -13,9 +12,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.ts --mode=development -w",
-    "dev:build-server2": "webpack --config webpack.server.ts",
-    "dev:start": "nodemon ./server-build/server.js",
+    "dev:build-server": "webpack --config webpack.server.ts",
+    "dev:start": "nodemon server-build/server.js",
     "dev": "npm-run-all --parallel build dev:*",
     "start": "BROWSER=NONE react-scripts start",
     "build": "react-scripts build",
@@ -52,9 +50,7 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
     "@types/webpack-node-externals": "^2.5.3",
-    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "nodemon": "^2.0.16",
     "npm-run-all": "^4.1.5",
@@ -65,6 +61,7 @@
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
     "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "@types/sass-loader": "^8.0.3"
   }
 }
