@@ -14,3 +14,7 @@ AdditionalTasks
 2. Files created during [this](https://devtails.xyz/how-to-set-up-server-side-rendering-ssr-with-react-and-esbuild) tutorial.
 
 3. Files created during [this](https://www.digitalocean.com/community/tutorials/react-server-side-rendering) tutorial.
+
+4. React.js CSR migration to Next.js SSR according to
+   [this](https://vilvaathiban.medium.com/nextjs-convert-client-side-react-app-to-server-side-rendering-in-5-mins-2106ad69f5a5)
+   tutorial.
