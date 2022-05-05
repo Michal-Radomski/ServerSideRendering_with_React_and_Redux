@@ -8,19 +8,43 @@ module.exports = {
   mode: "production",
   externals: [nodeExternals()],
   output: {
-    path: path.resolve("server-build"),
+    path: path.resolve(__dirname, "server-build"),
     filename: "server.js",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss", ".css"],
   },
-  plugins: [new MiniCssExtractPlugin()],
+
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/react", "@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+          },
+          "postcss-loader",
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader", // translates CSS into CommonJS
+          "postcss-loader",
+          "sass-loader", // compiles Sass to CSS, using Node Sass by default
+        ],
       },
       {
         test: /\.(ts|tsx)$/,
@@ -30,25 +54,11 @@ module.exports = {
           configFile: "tsconfig.server.json",
         },
       },
-      // {
-      //   test: /\.(s(a|c)ss)$/,
-      //   use: ["style-loader", "css-loader", "sass-loader"],
-      // },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "./main.[contenthash].css",
+    }),
+  ],
 };
