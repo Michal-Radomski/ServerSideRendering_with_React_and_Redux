@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   console.log("req.ip:", req.ip);
   const app = ReactDOMServer.renderToString(<App />);
   // const app = ReactDOMServer.renderToString(React.createElement(App));
-  const indexFile = path.resolve("../build/index.html");
+  const indexFile = path.resolve("./build/index.html");
 
   fs.readFile(indexFile, "utf8", (error, data) => {
     if (error) {
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use(express.static("../build"));
+app.use(express.static("./build"));
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port: ${PORT}`);
