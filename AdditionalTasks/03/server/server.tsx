@@ -13,6 +13,7 @@ const app = express();
 app.get("/", (req, res) => {
   console.log("req.ip:", req.ip);
   const app = ReactDOMServer.renderToString(<App />);
+  // const app = ReactDOMServer.renderToString(React.createElement(App));
   const indexFile = path.resolve("./build/index.html");
 
   fs.readFile(indexFile, "utf8", (error, data) => {
