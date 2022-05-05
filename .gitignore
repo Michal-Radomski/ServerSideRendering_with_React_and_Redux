@@ -39,10 +39,10 @@ typings/
 .next
 
 # My Entries
-00 Diagrams/
+0 Diagrams/
+1 api/
 build/
 public/
-api/
 dist/
 built/
 server-build/
