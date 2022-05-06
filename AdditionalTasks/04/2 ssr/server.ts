@@ -1,7 +1,17 @@
+//* https://github.com/vercel/next.js/blob/canary/examples/custom-server-express/server.js
+
+//@ts-ignore
 const express = require("express");
 const next = require("next");
-const dev = process.env.NODE_ENV !== "production"; // Create the Express-Next App
-const app = next({dev});
+
+// import express from "express";
+// import next from "next";
+
+const dev: boolean = process.env.NODE_ENV !== "production"; // Create the Express-Next App
+const hostname: string = "localhost";
+const port: number = 3000;
+
+const app = next({dev, hostname, port});
 
 console.log("app:", app);
 
@@ -14,13 +24,12 @@ app
     server.get("*", (req: Request, res: Response) => {
       return handle(req, res);
     });
-    server.listen(3000, (error: string) => {
+    server.listen(port, (error: string) => {
       if (error) {
         console.error("error:", error);
         throw error;
       }
-
-      console.log("> Ready on http://localhost:3000");
+      console.log(`> Ready on ${hostname}:${port}`);
     });
   })
   .catch((ex: {stack: string}) => {
