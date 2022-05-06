@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import "./index.scss";
+import "../styles/index.scss";
 
 function App(): JSX.Element {
   return (

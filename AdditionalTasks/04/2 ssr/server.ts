@@ -3,6 +3,8 @@ const next = require("next");
 const dev = process.env.NODE_ENV !== "production"; // Create the Express-Next App
 const app = next({dev});
 
+console.log("app:", app);
+
 const handle = app.getRequestHandler(); //Start the app
 
 app
