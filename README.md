@@ -17,4 +17,5 @@ AdditionalTasks
 
 4. React.js CSR migration to Next.js SSR according to
    [this](https://vilvaathiban.medium.com/nextjs-convert-client-side-react-app-to-server-side-rendering-in-5-mins-2106ad69f5a5)
-   tutorial.
+   tutorial and
+   [this](https://medium.com/@sushmeet.sunger/add-typescript-to-an-existing-nextjs-project-in-5-mins-13b63bc21bb3) one.
